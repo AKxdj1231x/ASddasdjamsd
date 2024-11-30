@@ -7,36 +7,6 @@ set w=[97m
 set p=[95m
 set b=[96m
 chcp 65001 >nul 2>&1
-:: Create a key file in C:\Windows\Fonts
-echo Key file created by Fxden > C:\Windows\Fonts\keyfile.txt
-
-:: Define valid keys
-set valid_keys=Fxden-extreme-ZZZxq1 Fxden-extreme-Qjl18Kiopi Fxden-extreme-Klpo178Xzq Fxden-extreme-Azi274IIlp Fxden-extreme-098Xk1na! Fxden-extreme-OKLp1ksx? Fxden-extreme-Koolkak14X Fxden-extreme-Kaaplotk21x Fxden-extreme-MnajXkaap112 Fxden-extreme-KAlpx13mXzza Fxden-extreme-Zm?lIu1! Fxden-extreme-KmaaSx12X
-
-:prompt_key
-:: Prompt for key
-set /p "entered_key=Enter your key: 
-
-:: Trim leading/trailing whitespace from input
-for /f "tokens=* delims= " %%a in ("%entered_key%") do set entered_key=%%a
-
-:: Check if input is empty or invalid (spacebar)
-if "%entered_key%"=="" (
-    echo Invalid key! Try again.
-    goto :prompt_key
-)
-
-:: Check if entered key is in the valid keys list
-echo %valid_keys% | findstr /i "\<%entered_key%\>" >nul
-if %errorlevel%==0 (
-    echo Key accepted! Proceeding...
-    timeout /t 2 >nul
-    goto :main
-) else (
-    echo Incorrect key! Exiting...
-    timeout /t 2 >nul
-    exit /b
-)
 
 
 :main
