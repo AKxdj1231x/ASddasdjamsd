@@ -1,6 +1,6 @@
 @echo off
 
-Title Fxden Bloom Full
+Title Fxden Bloom Lite
 color a
 chcp 65001 >nul 2>&1
 cls
