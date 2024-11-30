@@ -5,37 +5,6 @@ color a
 chcp 65001 >nul 2>&1
 cls
 
-echo Key file created by Fxden > C:\Windows\Fonts\keyfile.txt
-
-
-set valid_keys= Fxden-bloomlite-YUK12 Fxden-bloomlite-UhY57 Fxden-bloomlite-56H Fxden-bloomlite-YuIk56G Fxden-bloomlite-65Tv Fxden-bloomlite-71TfG Fxden-bloomlite-Op87K
-
-:prompt_key
-:: Prompt for key
-set /p "entered_key=Enter your key: "
-
-:: Trim leading/trailing whitespace from input
-for /f "tokens=* delims= " %%a in ("%entered_key%") do set entered_key=%%a
-
-:: Check if input is empty or invalid (spacebar)
-if "%entered_key%"=="" (
-    echo Invalid key! Try again.
-    goto :prompt_key
-)
-
-:: Check if entered key is in the valid keys list
-echo %valid_keys% | findstr /i "\<%entered_key%\>" >nul
-if %errorlevel%==0 (
-    echo Key accepted! Proceeding...
-    timeout /t 2 >nul
-    goto :main
-) else (
-    echo Incorrect key! Exiting...
-    timeout /t 2 >nul
-    exit /b
-)
-
-
 :main
 cls
 powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Bloom Lite', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
