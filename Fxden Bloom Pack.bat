@@ -3,38 +3,6 @@
 Title Fxden Bloom Pack
 color a
 chcp 65001 >nul 2>&1
-cls
-
-:: Create a key file in C:\Windows\Fonts
-echo Key file created by Fxden > C:\Windows\Fonts\keyfile.txt
-
-:: Define valid keys
-set valid_keys=Fxden-Fxden-bloompack-ERAQ46G Fxden-bloompack-QW56!Y Fxden-bloompack-5HK7j Fxden-bloompack-Tu5y!I Fxden-bloompack-78!PUjj Fxden-bloompack-CXJ57!J Fxden-bloompack-LMKuh68? Fxden-bloompack-LUjkg78H Fxden-bloompack-YAGY67!
-
-:prompt_key
-:: Prompt for key
-set /p "entered_key=Enter your key: "
-
-:: Trim leading/trailing whitespace from input
-for /f "tokens=* delims= " %%a in ("%entered_key%") do set entered_key=%%a
-
-:: Check if input is empty or invalid (spacebar)
-if "%entered_key%"=="" (
-    echo Invalid key! Try again.
-    goto :prompt_key
-)
-
-:: Check if entered key is in the valid keys list
-echo %valid_keys% | findstr /i "\<%entered_key%\>" >nul
-if %errorlevel%==0 (
-    echo Key accepted! Proceeding...
-    timeout /t 2 >nul
-    goto :main
-) else (
-    echo Incorrect key! Exiting...
-    timeout /t 2 >nul
-    exit /b
-)
 
 :main
 cls
