@@ -5,37 +5,7 @@ chcp 65001 >nul
 reg add "HKCU\CONSOLE" /v "VirtualTerminalLevel" /t REG_DWORD /d "1" /f >nul
 mode con cols=80 lines=20
 color 05
-cls
-:: Create a key file in C:\Windows\Fonts
-echo Key file created by Fxden > C:\Windows\Fonts\keyfile.txt
-
-:: Define valid keys
-set valid_keys=Fxden-ultimate-Oplk18 Fxden-ultimate-qUjko8y Fxden-ultimate-LkopMn2 Fxden-ultimate-11poEn1 Fxden-ultimate-Jk2Lp1? Fxden-ultimate-!jot24KL Fxden-ultimate-OPEkl21 Fxden-ultimate-POla91! Fxden-ultimate-Udask13Z Fxden-ultimate-ultT23!
-
-:: Use PowerShell to display an InputBox and capture the input
-for /f "tokens=* delims=" %%a in ('powershell -NoProfile -Command "& {Add-Type -AssemblyName Microsoft.VisualBasic; [Microsoft.VisualBasic.Interaction]::InputBox('Enter your key:', 'Fxden Ultimate', '')}"') do set "entered_key=%%a"
-
-:: Trim leading/trailing whitespace from input
-for /f "tokens=* delims= " %%a in ("%entered_key%") do set entered_key=%%a
-
-:: Check if input is empty or invalid (spacebar)
-if "%entered_key%"=="" (
-    echo Invalid key! Try again.
-    goto :prompt_key
-)
-
-:: Check if entered key is in the valid keys list
-echo %valid_keys% | findstr /i "\<%entered_key%\>" >nul
-if %errorlevel%==0 (
-    echo Key accepted! Proceeding...
-    timeout /t 2 >nul
-    goto :loading
-) else (
-    echo Incorrect key! Exiting...
-    timeout /t 2 >nul
-    exit /b
-)
-
+goto loading
 :loading
 cls
 powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Fxden Ultimate Pack', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
