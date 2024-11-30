@@ -8,7 +8,6 @@ cls
 
 :main
 cls
-powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Bloom Full', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
 echo.
 echo.
 echo.                                        ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
