@@ -5,36 +5,6 @@ color a
 chcp 65001 >nul 2>&1
 cls
 
-:: Create a key file in C:\Windows\Fonts
-echo Key file created by Fxden > C:\Windows\Fonts\bloomfull.txt
-
-:: Define valid keys
-set valid_keys=Fxden-bloomfull-YUI156H Fxden-bloomfull-JK67H Fxden-bloomfull-YF56TfyH Fxden-bloomfull-176LUy Fxden-bloomfull-JIK67u Fxden-bloomfull-6HTJko
-
-:prompt_key
-:: Prompt for key
-set /p "entered_key=Enter your key: "
-
-:: Trim leading/trailing whitespace from input
-for /f "tokens=* delims= " %%a in ("%entered_key%") do set entered_key=%%a
-
-:: Check if input is empty or invalid (spacebar)
-if "%entered_key%"=="" (
-    echo Invalid key! Try again.
-    goto :prompt_key
-)
-
-:: Check if entered key is in the valid keys list
-echo %valid_keys% | findstr /i "\<%entered_key%\>" >nul
-if %errorlevel%==0 (
-    echo Key accepted! Proceeding...
-    timeout /t 2 >nul
-    goto :main
-) else (
-    echo Incorrect key! Exiting...
-    timeout /t 2 >nul
-    exit /b
-)
 
 :main
 cls
