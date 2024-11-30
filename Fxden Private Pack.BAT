@@ -1,5 +1,5 @@
 @echo off
-title Fxden Ultimate - %version% 
+title Fxden Private Pack - %version% 
 set version=1.2
 chcp 65001 >nul
 
