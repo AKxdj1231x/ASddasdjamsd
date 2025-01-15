@@ -5,54 +5,6 @@ color a
 chcp 65001 >nul 2>&1
 cls
 
-
-:main
-cls
-echo.
-echo.
-echo.                                        ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
-echo.                                        ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ 
-echo.                                        ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗
-echo.                                        ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║
-echo.                                        ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝
-echo.                                         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
-echo.                                            
-echo.                          DO NOT GIVE OUT THIS PRODUCT, IT IS NOW HWID LOCKED AND IF THIS IS OPENED ON ANOTHER 
-echo.                         PC I HAVE THE RIGHT TO PULL YOUR ACCESS TO MY PRODUCT WITH NO REFUND. 
-echo  
-pause
-goto :success                                                                                                                                                                                                                               
-
-:success
-cls
-echo.
-echo Success! You have logged in! %name%
-pause
-cls
-echo.
-echo			██████  ██       ██████   ██████  ███    ███     ███████ ██    ██ ██      ██      
-echo			██   ██ ██      ██    ██ ██    ██ ████  ████     ██      ██    ██ ██      ██      
-echo			██████  ██      ██    ██ ██    ██ ██ ████ ██     █████   ██    ██ ██      ██      
-echo			██   ██ ██      ██    ██ ██    ██ ██  ██  ██     ██      ██    ██ ██      ██      
-echo			██████  ███████  ██████   ██████  ██      ██     ██       ██████  ███████ ███████ 
-timeout 4 >nul
-pause
-cls                                                                                                                                                                    
-echo Executing Full bloom. Please wait. 
-echo.
-echo Executing... 
-TIMEOUT /T 5 /NOBREAK
-echo.
-echo Press Enter To Activate Full bloom.
-pause >nul
-echo. 
-@echo off
-echo All credits belong to Fxden
-echo Failure to comply with TOS will result in a HWID Ban.
-@echo off
-echo Applying Bloom full...
-
-
 reg add "HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers\Copy To" /ve /t REG_SZ /d "{C2FBB630-2971-11D1-A18C-00C04FD75D13}" /f
 echo Action complete
 reg add "HKEY_CLASSES_ROOT\AllFilesystemObjects\shellex\ContextMenuHandlers\Move To" /ve /t REG_SZ /d "{C2FBB631-2971-11D1-A18C-00C04FD75D13}" /f
