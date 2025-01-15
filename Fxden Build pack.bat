@@ -5,47 +5,7 @@ color a
 chcp 65001 >nul 2>&1
 cls
 
-:main
-cls
-powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Fxden Build', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
-echo.
-echo.
-echo.                                        ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
-echo.                                        ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ 
-echo.                                        ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗
-echo.                                        ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║
-echo.                                        ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝
-echo.                                         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
-echo.                                            
-echo.                          DO NOT GIVE OUT THIS PRODUCT, IT IS NOW HWID LOCKED AND IF THIS IS OPENED ON ANOTHER 
-echo.                         PC I HAVE THE RIGHT TO PULL YOUR ACCESS TO MY PRODUCT WITH NO REFUND.
-echo  
-pause
-goto :success    
- 
-:success
-        
-cls
-echo.
-echo.
-echo		██     ██ ███████ ██       ██████  ██████  ███    ███ ███████ 
-echo		██     ██ ██      ██      ██      ██    ██ ████  ████ ██      
-echo		██  █  ██ █████   ██      ██      ██    ██ ██ ████ ██ █████   
-echo		██ ███ ██ ██      ██      ██      ██    ██ ██  ██  ██ ██      
-echo		 ███ ███  ███████ ███████  ██████  ██████  ██      ██ ███████ 
-pause
-cls
-echo Success! You have logged in! %name%
-pause
-cls
-echo Executing Build pack. Please wait. 
-echo.
-echo Executing... 
-TIMEOUT /T 5 /NOBREAK
-echo.
-echo Press Enter To Activate Build pack.
-pause >nul
-echo. 
+
 @echo off
 echo All credits belong to Fxden
 echo Failure to comply with TOS will result in a HWID Ban.
