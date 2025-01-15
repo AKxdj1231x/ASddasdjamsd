@@ -6,54 +6,6 @@ chcp 65001 >nul 2>&1
 cls
 
 
-:main
-cls
-powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Shotgun Full', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
-echo.
-echo.
-echo.                                        ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
-echo.                                        ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ 
-echo.                                        ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗
-echo.                                        ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║
-echo.                                        ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝
-echo.                                         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
-echo.                                            
-echo.                          DO NOT GIVE OUT THIS PRODUCT, IT IS NOW HWID LOCKED AND IF THIS IS OPENED ON ANOTHER 
-echo.                         PC I HAVE THE RIGHT TO PULL YOUR ACCESS TO MY PRODUCT WITH NO REFUND. 
-echo  
-pause
-goto :success                                                                                                                                                                                                                               
-
-:success
-cls
-echo.
-echo Success! You have logged in! %name%
-pause
-cls
-echo.
-echo			███████ ██   ██  ██████  ████████  ██████  ██    ██ ███    ██     ███████ ██    ██ ██      ██      
-echo			██      ██   ██ ██    ██    ██    ██       ██    ██ ████   ██     ██      ██    ██ ██      ██      
-echo			███████ ███████ ██    ██    ██    ██   ███ ██    ██ ██ ██  ██     █████   ██    ██ ██      ██      
-echo			     ██ ██   ██ ██    ██    ██    ██    ██ ██    ██ ██  ██ ██     ██      ██    ██ ██      ██      
-echo			███████ ██   ██  ██████     ██     ██████   ██████  ██   ████     ██       ██████  ███████ ███████ 
-echo.                                                                                                   
-echo                                                    Please Wait                                                                                                   
-timeout 3 >nul
-pause
-cls
-echo Executing Shotgun Full. Please wait. 
-echo.
-echo Executing... 
-TIMEOUT /T 5 /NOBREAK
-echo.
-echo Press Enter To Activate Full bloom.
-pause >nul
-echo. 
-@echo off
-echo All credits belong to Fxden
-echo Failure to comply with TOS will result in a HWID Ban.
-@echo off
-echo Applying Shotgun Full...
 
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions" /v "CpuPriorityClass" /t REG_DWORD /d "3" /f
 Reg.exe add "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\csrss.exe\PerfOptions" /v "IoPriority" /t REG_DWORD /d "3" /f
