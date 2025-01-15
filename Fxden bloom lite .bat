@@ -5,44 +5,6 @@ color a
 chcp 65001 >nul 2>&1
 cls
 
-:main
-cls
-powershell -Command "& {Add-Type -AssemblyName System.Windows.Forms; [System.Windows.Forms.MessageBox]::Show('Bloom Lite', 'Thank You For Purchasing!', 'OK', [System.Windows.Forms.MessageBoxIcon]::Information);}"
-echo
-echo.                                        ██╗    ██╗ █████╗ ██████╗ ███╗   ██╗██╗███╗   ██╗ ██████╗ 
-echo.                                        ██║    ██║██╔══██╗██╔══██╗████╗  ██║██║████╗  ██║██╔════╝ 
-echo.                                        ██║ █╗ ██║███████║██████╔╝██╔██╗ ██║██║██╔██╗ ██║██║  ███╗
-echo.                                        ██║███╗██║██╔══██║██╔══██╗██║╚██╗██║██║██║╚██╗██║██║   ██║
-echo.                                        ╚███╔███╔╝██║  ██║██║  ██║██║ ╚████║██║██║ ╚████║╚██████╔╝
-echo.                                         ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
-echo.                                            
-echo.                          DO NOT GIVE OUT THIS PRODUCT, IT IS NOW HWID LOCKED AND IF THIS IS OPENED ON ANOTHER 
-echo.                         PC I HAVE THE RIGHT TO PULL YOUR ACCESS TO MY PRODUCT WITH NO REFUND.
-echo.
-echo.
-echo.   
-pause
-goto :success                                                                                                                                                                                                                               cls
-
-:success
-cls
-echo.
-echo Success! You have logged in! %name%
-pause
-cls
-echo Executing Bloom lite. Please wait. 
-echo.
-echo Executing... 
-TIMEOUT /T 5 /NOBREAK
-echo.
-echo Press Enter To Activate bloom lite.
-pause >nul
-echo. 
-@echo off
-echo All credits belong to Fxden
-echo Failure to comply with TOS will result in a HWID Ban.
-@echo off
-echo Applying Bloom lite...
 
 
 R Killing SystemSettings process
