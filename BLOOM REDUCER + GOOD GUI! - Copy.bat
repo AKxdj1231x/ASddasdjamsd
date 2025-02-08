@@ -136,6 +136,19 @@ net start wuauserv
 echo Action complete
 net start UsoSvc
 echo Action complete
+taskkill F FI IMAGENAME eq SystemSettings.exe
+net stop wuauserv
+net stop UsoSvc
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v DoNotConnectToWindowsUpdateInternetLocations t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v SetDisableUXWUAccess t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdateAU v NoAutoUpdate t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v ExcludeWUDriversInQualityUpdate t REG_DWORD d 1 f
+gpupdate force
+rd s q CWindowsSoftwareDistribution
+md CWindowsSoftwareDistribution
+net start wuauserv
+net start UsoSvc
+pause
 
 echo Bloom applied successfully! Have fun!!!
 pause
