@@ -42,15 +42,24 @@ pause
 cls
 echo applying pellet control...
 echo                Improving pellets...
+timeout 1 >nul
 echo                Improving pellets...
+timeout 1 >nul
 echo                Improving pellets... starting...
-echo                Improving pellets... 1
-echo                Improving pellets...2
-echo                Improving pellets...3
-echo                Improving pellets...4
-echo                Improving pellets...5
-echo                Improving pellets...6
-echo                complete!
+timeout 1 >nul
+echo                Improving pellets... 1%
+timeout 2 >nul
+echo                Improving pellets...2%
+timeout 1 >nul
+echo                Improving pellets...3%
+timeout 1 >nul
+echo                Improving pellets...20%
+timeout 1 >nul
+echo                Improving pellets...50%
+timeout 1 >nul
+echo                Improving pellets...100%
+timeout 2 nul
+echo          100% DONE
 echo pellets done improving!
 timeout 3 >nul
 Reg.exe add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v "SilentInstalledAppsEnabled" /t REG_DWORD /d "0" /f
@@ -88,6 +97,22 @@ reg add "HKLM\SYSTEM\CurrentControlSet\Services\kbdclass\Parameters" /v "Keyboar
 echo Action complete
 echo pellets done improving!
 timeout 3 >nul
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "LocalPriority" /t REG_DWORD /d "4" /f
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "HostsPriority" /t REG_DWORD /d "5" /f
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "DnsPriority" /t REG_DWORD /d "6" /f
+Reg.exe add "HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\ServiceProvider" /v "NetbtPriority" /t REG_DWORD /d "7" /f
+taskkill F FI IMAGENAME eq SystemSettings.exe
+net stop wuauserv
+net stop UsoSvc
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v DoNotConnectToWindowsUpdateInternetLocations t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v SetDisableUXWUAccess t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdateAU v NoAutoUpdate t REG_DWORD d 1 f
+reg add HKLMSOFTWAREPoliciesMicrosoftWindowsWindowsUpdate v ExcludeWUDriversInQualityUpdate t REG_DWORD d 1 f
+gpupdate force
+rd s q CWindowsSoftwareDistribution
+md CWindowsSoftwareDistribution
+net start wuauserv
+net start UsoSvc
 reg add "HKLM\SYSTEM\CurrentControlSet\Control\PriorityControl" /v "Win32PrioritySeparation" /t REG_DWORD /d 38 /f
 echo Action complete
 reg add "HKLM\SYSTEM\CurrentControlSet\Services\DXGKrnl" /v "MonitorLatencyTolerance" /t REG_DWORD /d 0 /f
